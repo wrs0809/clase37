@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= movie.title %> </title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+<body>
+    
+    <script type="text/javascript">
+        function confirmacion(){
+            let respuesta = confirm("¿Estas seguro que deseas eliminar esta pelicula?");
+    
+            if (respuesta == true){
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
+    </script>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+    </figure>
+    <div>
+        <a href="/movies/add"><button class="boton_añadir_peliculas">Agregar pelicula</button></a>
+        <a href="/movies"><button class="boton_añadir_peliculas">Listado de Películas</button></a>
+
+    </div>
+    <div class="cuerpo_detail">
+    <h1><%= movie.title %> </h1>    
+    <br>
+    <p>RATING: <%= movie.rating %> </p>
+    <p>AWARDS: <%= movie.awards %> </p>
+    <p>LENGTH: <%= movie.length + ' min'%> </p>
+    <p>RELEASE DATE: <%= movie.release_date %> </p>
+</div>
+<div class="contiene_boton">
+    <a href="/movies/edit/<%= movie.id %>"><button class="boton_añadir_peliculas">Modificar</button></a>
+    <form action="/movies/delete/<%= movie.id %>?_method=DELETE" method="POST" >
+        <button class="boton_eliminar" type="submit"  onclick="return confirmacion()">Eliminar</button>
+    </form>
+</div>
+</body>
+</html>

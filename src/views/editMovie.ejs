@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>editar <%= movie.title %></title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+      </figure>
+      <div class="contenedor_de_formulario">
+    <h1>Editar pelicula</h1>
+    <form class="formulario_add" action="/movies/edit/<%= movie.id %>?_method=PUT" method="POST">
+
+        <label for="title">Titulo:</label>
+        <input type="text" id="title" name="title" value=" <%= movie.title %> ">
+        <br>
+        <label for="rating">Rating:</label>
+        <input type="text" id="rating" name="rating" value=" <%= movie.rating %> ">
+        <br>
+        <label for="awards">Awards:</label>
+        <input type="text" id="awards" name="awards" value=" <%= movie.awards %> ">
+        <br>
+        <label for="release_date">Fecha de lanzamiento :</label>
+        <input type="date" id="release_date" name="release_date" value=" <%= movie.release_date %> ">
+        <br>
+        <label for="length">Duración:</label>
+        <input type="text" id="length" name="length" value=" <%= movie.length %> ">
+        <br>
+        
+        <label for="genero">Género:</label>
+<select name="genero">
+    <% genres.forEach(genre => { %>
+        <%= movie.genre %>
+        <option value="<%= genre.name %>" <% if (movie.generos.name === genre.name) { %> selected <% } %>><%= genre.name %></option>
+    <% }) %>
+</select>
+<br>
+        <button class="boton_guardar" type="submit">Guardar</button>
+    </form>
+</div>
+</body>
+
+</html>

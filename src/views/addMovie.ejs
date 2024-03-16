@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir peliculas</title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+      </figure>
+      <div class="contenedor_de_formulario">
+    <h1>Añadir peliculas</h1>
+    
+    <form class="formulario_add" action="/movies/add" method="POST">
+
+        <label for="title">Titulo:</label>
+        <input type="text" id="title" name="title" >
+        <br>
+        <label for="rating">Rating:</label>
+        <input type="text" id="rating" name="rating" >
+        <br>
+        <label for="awards">Awards:</label>
+        <input type="text" id="awards" name="awards" >
+        <br>
+        <label for="release_date">Fecha de lanzamiento :</label>
+        <input type="date" id="release_date" name="release_date" >
+        <br>
+        <label for="length">Duración:</label>
+        <input type="text" id="length" name="length" >
+        <br>
+        <label for="genero">Genero:</label>
+        <select name="genero">
+            <option value="Accion">Acción</option>
+            <option value="Animacion">Animación</option>
+            <option value="Aventuras">Aventuras</option>
+            <option value="Ciencia Ficcion">Ciencia Ficción</option>
+            <option value="Comedia">Comedia</option>
+            <option value="Documental">Documental</option>
+            <option value="Drama">Drama</option>
+            <option value="Fantasia">Fantasia</option>
+            <option value="Infantiles">Infantiles</option>
+            <option value="Musical">Musical</option>
+            <option value="Suspenso">Suspenso</option>
+            <option value="Terror">Terror</option>
+          </select>
+          <br>
+        <button class="boton_guardar" type="submit">Guardar</button>
+    </form>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+@import url("/css/normalize.css");
+@import url("/css/moviesList.css");
+@import url("/css/addMovie.css");
+@import url("/css/moviesDetail.css");
+
+
+*{
+  /* box-sizing: border-box;
+  margin: 0;
+  padding: 0; */
+}
+body {
+  /* padding: 50px; */
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+img{
+  width: 100%;
+}
+figure{
+  width: 20%;
+}
+
+
